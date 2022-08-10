@@ -12,7 +12,7 @@ public class IOCExample : MonoBehaviour
     {
         var container = new IOCContainer();
         container.Register(new BluetoothManager());//S:注册一个实例
-        var blutoothManager = container.Get<BluetoothManager>();
+        var blutoothManager = container.Get<BluetoothManager>();//S:获取一个实例
         blutoothManager.Connect();
     }
 }

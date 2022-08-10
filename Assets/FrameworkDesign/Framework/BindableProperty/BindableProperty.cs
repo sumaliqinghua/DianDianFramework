@@ -23,6 +23,6 @@ public class BindableProperty<T> where T:IEquatable<T>//【?】IEquatable
         }
     }
 
-    public Action<T> OnValueChanged;//S:委托在子对象里，调用也是子对象；父对象把方法传给委托
+    public Action<T> OnValueChanged;//S:委托在这里调用；外部把方法传给委托
 }
 }

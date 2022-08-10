@@ -22,4 +22,5 @@ public class Event<T> where T:Event<T>//【l】
         mOnEventTrigger?.Invoke();//【l】
     }
     }
+
 }

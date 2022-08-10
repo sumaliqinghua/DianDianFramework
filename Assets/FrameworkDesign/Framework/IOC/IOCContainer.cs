@@ -9,7 +9,7 @@ namespace FrameworkDesign
     public class IOCContainer
     {
         public Dictionary<Type,object> mInstances = new Dictionary<Type, object>();
-        //【?】type是一种类typeof出来的都是Type类吗//【?】怎么反射会真实类的
+        //【?】type是一种类typeof出来的都是Type类吗//【?】怎么反射回真实类的
         /// <summary>
         /// 注册
         /// </summary>
@@ -34,9 +34,8 @@ namespace FrameworkDesign
         /// <returns></returns>
         public T Get<T>() where T : class
         {
-            var key = typeof(T);//【?】啥时候用var
-            object retObj;
-            if (mInstances.TryGetValue(key, out retObj))
+            var key = typeof(T);
+            if (mInstances.TryGetValue(key, out var retObj))
             {
                 return retObj as T;//S:泛型返回的应用案例
             }

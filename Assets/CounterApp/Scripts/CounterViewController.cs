@@ -50,7 +50,6 @@ public class CounterViewController : MonoBehaviour
 public class CounterModel:Singleton<CounterModel>
 {
     private CounterModel(){}
-    //S:类里实例化了一个静态对象
     public BindableProperty<int> Count = new BindableProperty<int>()
     {
         Value = 0//S:初始化

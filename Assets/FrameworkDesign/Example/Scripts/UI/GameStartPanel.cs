@@ -12,12 +12,9 @@ public class GameStartPanel : MonoBehaviour
         transform.Find("BtnGameStart").GetComponent<Button>().onClick.AddListener(() =>
         {
             gameObject.SetActive(false);
-            //Enemies.SetActive(true);
-            // GameStartEvent.Trigger();
             new StartGameCommand().Execute();
         });
         
     }
-
 }
 }
