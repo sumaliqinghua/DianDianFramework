@@ -1,6 +1,6 @@
 using FrameworkDesign;
 
-public class GameModel:Singleton<GameModel>
+public class GameModel
 {
     public enum GameStates
     {
@@ -8,6 +8,7 @@ public class GameModel:Singleton<GameModel>
         Started,
         Over
     }
+    // private GameModel(){}
     public BindableProperty<int> KillCount = new BindableProperty<int>()
     {
         Value = 0

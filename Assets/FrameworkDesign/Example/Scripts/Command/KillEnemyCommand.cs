@@ -5,8 +5,8 @@ namespace FrameworkDesign.Example.Scripts
     {
         public void Execute()
         {
-            GameModel.Instance.KillCount.Value++;
-            if (GameModel.Instance.KillCount.Value == 9)
+            GameApp.Get<GameModel>().KillCount.Value++;
+            if (GameApp.Get<GameModel>().KillCount.Value == 9)
             {
                 GamePassEvent.Trigger();
             }

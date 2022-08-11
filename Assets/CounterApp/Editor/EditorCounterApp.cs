@@ -22,7 +22,7 @@ public class EditorCounterApp : EditorWindow
         {
             new AddCountCommand().Execute();
         }
-        GUILayout.Label(CounterModel.Instance.Count.Value.ToString());
+        GUILayout.Label(CounterApp.CounterApp.Get<CounterModel>().Count.Value.ToString());
         if (GUILayout.Button("-"))
         {
             new SubCountCommand().Execute();

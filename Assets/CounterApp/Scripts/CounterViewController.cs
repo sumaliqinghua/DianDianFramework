@@ -31,8 +31,8 @@ public class CounterViewController : MonoBehaviour
             // UpdateView();
         });
         // UpdateView();//S:初始化显示
-        CounterModel.Instance.Count.OnValueChanged += OnCountChanged;
-        OnCountChanged(CounterModel.Instance.Count.Value);
+        CounterApp.Get<CounterModel>().Count.OnValueChanged += OnCountChanged;
+        OnCountChanged(CounterApp.Get<CounterModel>().Count.Value);
     }
 
 
@@ -43,13 +43,12 @@ public class CounterViewController : MonoBehaviour
 
     private void OnDestroy()
     {
-        CounterModel.Instance.Count.OnValueChanged -= OnCountChanged;
+        CounterApp.Get<CounterModel>().Count.OnValueChanged -= OnCountChanged;
     }
 }
 
-public class CounterModel:Singleton<CounterModel>
+public class CounterModel
 {
-    private CounterModel(){}
     public BindableProperty<int> Count = new BindableProperty<int>()
     {
         Value = 0//S:初始化

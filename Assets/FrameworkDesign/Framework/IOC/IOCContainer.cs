@@ -9,12 +9,7 @@ namespace FrameworkDesign
     public class IOCContainer
     {
         public Dictionary<Type,object> mInstances = new Dictionary<Type, object>();
-        //【?】type是一种类typeof出来的都是Type类吗//【?】怎么反射回真实类的
-        /// <summary>
-        /// 注册
-        /// </summary>
-        /// <param name="instance"></param>
-        /// <typeparam name="T"></typeparam>
+       
         public void Register<T>(T instance)
         {
             var key = typeof(T);
@@ -27,11 +22,7 @@ namespace FrameworkDesign
                 mInstances.Add(key,instance);
             }
         }
-        /// <summary>
-        /// 获取
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        
         public T Get<T>() where T : class
         {
             var key = typeof(T);
