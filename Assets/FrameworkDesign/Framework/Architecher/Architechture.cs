@@ -6,7 +6,7 @@ namespace FrameworkDesign.Framework
 {
     public abstract class Architechture<T> where T : Architechture<T>,new()
     {
-        private IOCContainer mContainer = null;
+        private IOCContainer mContainer = new IOCContainer();
         private static T architechture = null;//S:这儿用T是因为T已经限制继承自Architechture<T>了，是子类
 
         static void MakeSureContainer()

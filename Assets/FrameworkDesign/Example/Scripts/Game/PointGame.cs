@@ -6,7 +6,7 @@ namespace FrameworkDesign.Example.Scripts
     {
         protected override void Init()
         {
-            Register(new PointGame());
+            Register(new GameModel());
         }
     }
 }
