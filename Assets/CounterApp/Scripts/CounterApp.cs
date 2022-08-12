@@ -1,28 +1,13 @@
 ﻿using FrameworkDesign;
+using FrameworkDesign.Framework;
 
 namespace CounterApp
 {
-    public class CounterApp
+    public class CounterApp:Architechture <CounterApp>
     {
-        private static IOCContainer mContainer = null;//S:存单例的字典
-
-        static void MakeSureContainer()
+        protected override void Init()
         {
-            if (mContainer == null)
-            {
-                mContainer = new IOCContainer();
-            }
-        }
-
-        private static void Init()
-        {
-            mContainer.Register(new CounterModel());//【?】是这个项目的所有单例都在这儿？
-        }
-
-        public static T Get<T>() where T : class
-        {
-            MakeSureContainer();
-            return mContainer.Get<T>();
+            Register(new CounterApp());
         }
     }
 }
