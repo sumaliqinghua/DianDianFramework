@@ -7,7 +7,7 @@ namespace CounterApp
     {
         protected override void Init()
         {
-            Register(new CounterApp());
+            Register<ICounterModel>(new CounterModel());
         }
     }
 }
