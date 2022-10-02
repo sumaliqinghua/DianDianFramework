@@ -1,6 +1,13 @@
 using FrameworkDesign;
 
-public class GameModel
+public interface IGameModel
+{
+    public BindableProperty<int> KillCount { get; }
+    public BindableProperty<int> Gold { get; }
+    public BindableProperty<int> Score { get; }
+    public BindableProperty<int> BestScore { get; }
+}
+public class GameModel:IGameModel
 {
     public enum GameStates
     {
@@ -8,23 +15,20 @@ public class GameModel
         Started,
         Over
     }
-    // private GameModel(){}
-    public BindableProperty<int> KillCount = new BindableProperty<int>()
-    {
-        Value = 0
-    };//【】事件是啥
-    // public static int KillCount = 0;
-    public BindableProperty<int> Gold = new BindableProperty<int>()
+    public BindableProperty<int> KillCount { get; } = new BindableProperty<int>()
     {
         Value = 0
     };
-    public BindableProperty<int> Score = new BindableProperty<int>()
+    public BindableProperty<int> Gold { get; } = new BindableProperty<int>()
     {
         Value = 0
     };
-    public BindableProperty<int> BestScore = new BindableProperty<int>()
+    public BindableProperty<int> Score { get; } = new BindableProperty<int>()
     {
         Value = 0
     };
-
+    public BindableProperty<int> BestScore { get; } = new BindableProperty<int>()
+    {
+        Value = 0
+    };
 }
